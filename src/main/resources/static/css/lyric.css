@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {  
+    background: #171618;  
+    font-family: 'Asap', sans-serif;
+    color: #fff;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* 화면 전체 높이에 따라 가운데 정렬할 경우 */
+}
+
+.lyric-video-wrap {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    background-color: #7b9be4;
+}
+
+.album-img-wrap,
+.album-img-wrap a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+}
+
+.album-img-wrap img {
+    width: 65%;
+    height: 65%;
+    text-align: center;
+    animation: moveUp 3s infinite;
+    cursor: url('/assets/images/click_icon.png'), auto;
+}
+
+.right-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-box,
+.lyric-box {
+    text-align: center;
+}
+
+.title-box {
+    width: 100%;
+    height: 65px;
+    font-family: 'Fjalla One', sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.lyric-box {
+    width: 100%;
+    height: 335px;
+    font-weight: lighter;
+    overflow: scroll;
+    white-space: nowrap;
+    -ms-overflow-style: none; /* 인터넷 익스플로러 */
+    scrollbar-width: none; /* 파이어폭스 */
+}
+
+.lyric-box::-webkit-scrollbar {
+    display: none;
+}
+
+.lyric-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    animation: moveUp 3s infinite;
+    cursor: url('/assets/images/scroll_icon.png'), auto;
+}
+
+.lyric-list li {
+    margin: 12px 0;
+    padding: 5px;
+}
+
+.icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-box img {
+    width: 50%;
+    height: 50%;
+    text-align: center;
+}

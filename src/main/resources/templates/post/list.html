@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:each="post : ${posts}">
+        <div>
+            <h2 th:text="${'Author: ' + post.author}"></h2>
+            <h3 th:text="${post.content}"></h3>
+            <p th:text="${post.createdAt}"></p>
+            <button th:onclick="'javascript:showEdit(\'' + ${post.id} + '\')'">Edit</button>
+            <button th:onclick="'javascript:showDelete(\'' + ${post.id} + '\')'">Delete</button>
+            <button th:onclick="'javascript:showComments(\'' + ${post.id} + '\')'">Comments</button>
+        </div>
+        <div th:if="${#strings.isNotEmpty(post.modifiedContent)}">
+            <p th:text="${'Modified: ' + post.modifiedContent}"></p>
+        </div>
+        <div>
+            <!-- 댓글 목록 -->
+            <div th:each="comment : ${post.comments}">
+                <p th:text="${comment.content}"></p>
+                <p th:text="${'Comment by: ' + comment.author}"></p>
+                <p th:text="${comment.createdAt}"></p>
+            </div>
+            <!-- 댓글 입력 폼 -->
+            <form th:action="@{'/posts/comments'}" method="post" th:object="${newComment}">
+                <input type="hidden" th:field="*{post.id}" th:value="${post.id}" />
+                <label for="commentContent">Add a Comment:</label>
+                <input type="text" id="commentContent" name="commentContent" th:field="*{content}" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Thymeleaf 템플릿에 아래 코드를 추가합니다. -->
+    <script th:inline="javascript">
+        function showEdit(postId) {
+            var editForm = document.getElementById('editForm');
+            editForm.style.display = 'block';
+
+            // 서버에서 postId에 해당하는 글 정보를 가져오는 비동기 요청
+            fetch('/api/posts/' + postId)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(post => {
+                    // 가져온 정보를 Thymeleaf로 화면에 뿌려주는 로직
+                    document.getElementById('modifiedContent').value = post.content;
+                    // ...
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+
+        // showDelete, showComments 함수도 유사하게 구현
+    </script>
+</body>
+</html>

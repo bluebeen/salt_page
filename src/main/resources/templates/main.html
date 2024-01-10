@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragment/common :: common_header(~{::meta}, ~{::title}, ~{::link})}">
+    <link rel="stylesheet" th:href="@{/static/css/main.css}">
+</head>
+
+<body>
+    <div class="container">
+        <h3>main page</h3>
+    </div>
+    <th:block th:replace="~{fragment/common :: scripts}"></th:block>
+</body>
+</html>

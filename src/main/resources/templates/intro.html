@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragment/common :: common_header(~{::meta}, ~{::title}, ~{::link})}"></head>
+
+</head>
+<body>
+    <div class="wrap">
+        <img class="fan_nick" th:src="@{/assets/images/fan_nick_icon_wh.png}">
+        <p></p>
+        <p id="dynamic" class="lg-text"></p>
+        <p class="sm-text">Spoon No.1 Singer Salt's Fan Page</p>
+    </div>
+
+    <div class="btn-wrap">
+        <div class="box">
+            <a th:href="@{/salt_home}">
+                <button class="button button--winona button--border-thick button--round-l button--text-upper button--size-s button--text-thick" data-text="CLICK">
+                    <span>Enter</span>
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <th:block th:replace="~{fragment/common :: scripts}"></th:block>
+    <script th:src="@{/js/intro.js}"></script>
+</body>
+</html>

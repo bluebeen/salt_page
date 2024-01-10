@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragment/common :: common_header(~{::meta}, ~{::title}, ~{::link})}"></head>
+
+<body>
+    <div class="container">
+        <div class="lyric-video-wrap row">
+            <div class="icon-box col-md-1">
+                <img th:src="@{/assets/images/left_arrow.png}" alt="이전 버튼">
+            </div>
+            <div class="album-img-wrap col-md-4">
+                <a th:href="@{'https://www.spooncast.net/kr/cast/3374288'}" target="_blank">
+                    <img th:src="@{/assets/images/winter_salt_jipsa.jpg}" alt="Album Img">
+                </a>
+            </div>
+            <div class="lyric-box-wrap col-md-6">
+                <div class="title-box top-box">
+                    Winter - Salt & Jipsa
+                </div>
+                <div class="lyric-box bottom-box">
+                    <ul class="lyric-list">
+                        <li>오랜만에 듣는 알람소리 오늘따라 낯선 냉기가</li>
+                        <li>너를 대신해서 내 가슴을 꼬옥 계속 짓누르곤 해</li>
+                        <li>창밖에는 하얀 눈이 내려 겨울처럼 시린 공기가</li>
+                        <li>모든 것을 잃은 나에게 남은 온기마저 빼앗네</li>
+                        <li>세상 속에 가을이 사라진 것처럼 네가 사라지고 겨울이 온 후에야</li>
+                        <li>생각나고 생각나네 생각나 그 빈자리를 그리워 한다</li>
+                        <li>스치듯이 떠나가는 인연이라고 어쩌다가 마주치는 사람이라면</li>
+                        <li>행복해라 좋은 사람 만나라며 떠나간 널 다시 찾아보곤 해</li>
+                        <li>겨울처럼 시린 마음이 봄이 오지 않는 계절이</li>
+                        <li>다시 돌아오지 않을 너라면 다 사라졌음 해</li>
+                        <li>겨울처럼 시린 상처들 멎을 것만 같던 아픔이</li>
+                        <li>생각지도 못하게도 아파 이대로 얼어 붙었으면 해</li>
+                        <li>저기 녹아내린 눈 얼어붙지 않은 것처럼 나도 사라져 버릴래</li>
+                        <li>이미 지나가버린 나의 가을같이 방구석에 남겨 추억할래</li>
+                        <li>차갑게 얼어버린 나의 눈이 내리고 보내려 한 추억들 미련으로 변하고</li>
+                        <li>낡아버린 추억 페이지를 계속 넘겨봐</li>
+                        <li>아직 잡고 있어줘 눈에 보면 만져줘 넘어지지 않게 내 손 잡고 있어줘</li>
+                        <li>돌아보지 말아줘 떠나가지 말아줘 지루하단 듯이 계속 시계 보지 말아줘</li>
+                        <li>어지러워 매스꺼워 미칠것만 같은데 차가운 공기가 머리속을 휘감아 버려</li>
+                        <li>정신 차리고서 바라보는 하늘엔 어둠 속에 달이 나를 비추고 있어</li>
+                        <li>겨울처럼 시린 마음이 봄이 오지 않는 계절이</li>
+                        <li>다시 돌아오지 않을 너라면 다 사라졌음 해</li>
+                        <li>겨울처럼 시린 상처들 멎을 것만 같던 아픔이</li>
+                        <li>생각지도 못하게도 아파 이대로 얼어 붙었으면 해</li>
+                        <li>떠나버린 사랑아 남아버린 미련아 오지않을 계절아</li>
+                        <li>떠나버린 계절아 남아버린 사랑아 오지않을 미련아</li>
+                        <li>떠나버린 미련아 남아버린 계절아 오지않을 사랑아</li>
+                        <li>떠나버린 사랑아 남아버린 사랑아 오지않을 사랑아</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="icon-box col-md-1">
+                <img th:src="@{/assets/images/right_arrow.png}" alt="다음 버튼">
+            </div>
+        </div>
+    </div>
+
+    <th:block th:replace="~{fragment/common :: scripts}"></th:block>
+    <script th:src="@{/js/lyric.js}"></script>
+</body>
+</html>

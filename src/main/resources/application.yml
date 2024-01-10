@@ -3,10 +3,12 @@ server:
 
 spring:
   mvc:
-    static-path-pattern: /static/**
     view:
       prefix: /template/
       suffix: .html
+
+  resources:
+    static-locations: classpath:/static/
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
