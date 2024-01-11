@@ -4,7 +4,8 @@
 <head th:replace="~{fragment/common :: common_header(~{::meta}, ~{::title}, ~{::link})}"></head>
 
 <body>
-    <div class="container">
+    <th:block th:replace="~{fragment/common :: header}"></th:block>
+    <div class="lyric-wrap container">
         <div class="lyric-video-wrap row">
             <div class="icon-box col-md-1">
                 <img th:src="@{/assets/images/left_arrow.png}" alt="이전 버튼">
